@@ -27,6 +27,10 @@ namespace Lambda_Expression
             {
                 FireHardHandler(temperature);
             }
+            else
+            {
+                Console.WriteLine("溫度正常");
+            }
         }
     }
 }
