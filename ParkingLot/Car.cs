@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ParkingLot
 {
@@ -13,18 +9,22 @@ namespace ParkingLot
             LicensePlate = licensePlate;
             EnterTime = DateTime.Now;
         }
+
         /// <summary>
         /// 車牌號碼
         /// </summary>
         public string LicensePlate { get; set; }
+
         /// <summary>
         /// 進入時間
         /// </summary>
         public DateTime EnterTime { get; set; }
+
         /// <summary>
         /// 離開時間
         /// </summary>
         public DateTime LeaveTime { get; set; }
+
         /// <summary>
         /// 複寫ToString()
         /// </summary>

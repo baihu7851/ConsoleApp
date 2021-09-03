@@ -3,11 +3,12 @@ using System.Threading;
 
 namespace MultiThread
 {
-    class Program
+    internal class Program
     {
-        static int Conter = 0;
-        static readonly object Obj = new object();
-        static void Main(string[] args)
+        private static int _conter;
+        private static readonly object Obj = new object();
+
+        private static void Main()
         {
             Thread t1 = new Thread(x => GetTicked("T1"));
             Thread t2 = new Thread(x => GetTicked("T2"));
@@ -18,15 +19,15 @@ namespace MultiThread
             Console.ReadKey();
         }
 
-        static void GetTicked(string tickedNo)
+        private static void GetTicked(string tickedNo)
         {
-            for (int i = 0; i < 1000; i++)
+            for (var i = 0; i < 1000; i++)
             {
                 lock (Obj)
                 {
-                    int ticked = Conter + 1;
+                    int ticked = _conter + 1;
                     Console.WriteLine($"{tickedNo}:{ticked}");
-                    Conter = ticked;
+                    _conter = ticked;
                 }
             }
         }

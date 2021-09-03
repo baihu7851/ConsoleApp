@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ParkingLot
 {
@@ -11,23 +8,27 @@ namespace ParkingLot
         /// <summary>
         /// 幾分鐘內免費
         /// </summary>
-        const int FreeTime = 5;
+        private const int FreeTime = 5;
+
         /// <summary>
         /// 基礎費率
         /// </summary>
-        const int BaseMoney = 60;
+        private const int BaseMoney = 60;
+
         /// <summary>
-        /// 基礎時間 
+        /// 基礎時間
         /// </summary>
-        const int BaseTime = 60;
+        private const int BaseTime = 60;
+
         /// <summary>
         /// 增長時間
         /// </summary>
-        const double additionalTime = 30;
+        private const double AdditionalTime = 30;
+
         /// <summary>
         /// 增長費率
         /// </summary>
-        const int additionalMoney = 30;
+        private const int AdditionalMoney = 30;
 
         /// <summary>
         /// 建造停車場
@@ -38,14 +39,17 @@ namespace ParkingLot
             Carport = carport;
             Cars = new List<Car>();
         }
+
         /// <summary>
         /// 已停車列表
         /// </summary>
         private List<Car> Cars;
+
         /// <summary>
         /// 停車格數量
         /// </summary>
         private int Carport { get; set; }
+
         /// <summary>
         /// 進入停車場
         /// </summary>
@@ -62,6 +66,7 @@ namespace ParkingLot
         {
             return Cars.Count;
         }
+
         /// <summary>
         /// 尋找停車場內車輛
         /// </summary>
@@ -71,6 +76,7 @@ namespace ParkingLot
         {
             return Cars.Find(x => x.LicensePlate == licensePlate);
         }
+
         /// <summary>
         /// 離開停車場
         /// </summary>
@@ -86,6 +92,7 @@ namespace ParkingLot
             Cars.Remove(car);
             return ParkingFeeLogic(car.EnterTime, car.LeaveTime);
         }
+
         /// <summary>
         /// 離開測試
         /// </summary>
@@ -114,7 +121,7 @@ namespace ParkingLot
             int minute = (int)leaveTime.Subtract(enterTime).TotalMinutes;
             if (minute <= FreeTime) return 0;
             if (minute <= BaseTime) return BaseMoney;
-            return (int)Math.Ceiling((minute - BaseTime) / additionalTime) * additionalMoney + BaseMoney;
+            return (int)Math.Ceiling((minute - BaseTime) / AdditionalTime) * AdditionalMoney + BaseMoney;
         }
     }
 }

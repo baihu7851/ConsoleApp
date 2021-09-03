@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List_Dictionary_Search", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lambda_Expression", "Lambda_Expression\Lambda_Expression.csproj", "{DF2D917E-4BF8-421D-AD92-22DA8A013A09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "測試專案", "測試專案\測試專案.csproj", "{E5111D5E-9508-4305-92E0-17932FDE46E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{DF2D917E-4BF8-421D-AD92-22DA8A013A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF2D917E-4BF8-421D-AD92-22DA8A013A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF2D917E-4BF8-421D-AD92-22DA8A013A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5111D5E-9508-4305-92E0-17932FDE46E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5111D5E-9508-4305-92E0-17932FDE46E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5111D5E-9508-4305-92E0-17932FDE46E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5111D5E-9508-4305-92E0-17932FDE46E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

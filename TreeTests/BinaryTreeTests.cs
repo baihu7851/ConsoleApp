@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tree;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tree.Tests
 {
@@ -26,6 +20,7 @@ namespace Tree.Tests
             Assert.AreEqual(1, bTree.Root.Left.Value, "Left錯誤");
             Assert.AreEqual(8, bTree.Root.Right.Value, "Right錯誤");
         }
+
         [TestMethod()]
         public void InsertTest_string()
         {

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tree
 {
@@ -12,6 +9,7 @@ namespace Tree
         {
             Root = null;
         }
+
         /// <summary>
         /// 根結點
         /// </summary>
@@ -20,12 +18,14 @@ namespace Tree
 #else
         private Node Root;
 #endif
+
         /// <summary>
         /// 確認樹是否為空
         /// </summary>
         public bool IsEmpty { get { return Root == null; } }
 
         #region 尋找值
+
         /// <summary>
         /// 尋找某個值
         /// </summary>
@@ -39,6 +39,7 @@ namespace Tree
             }
             return Find(value, Root);
         }
+
         private bool Find(T value, Node currentRoot)
         {
             if (currentRoot == null)
@@ -56,9 +57,11 @@ namespace Tree
             }
             return Find(value, currentRoot.Right);
         }
-        #endregion
+
+        #endregion 尋找值
 
         #region 遍歷
+
         /// <summary>
         /// 遍歷
         /// </summary>
@@ -77,6 +80,7 @@ namespace Tree
             result.Add(currentRoot.Value);
             Traversal(currentRoot.Right, result);
         }
+
         /// <summary>
         /// 新增節點
         /// </summary>
@@ -85,12 +89,13 @@ namespace Tree
         {
             Insert(value, ref Root);
         }
-        #endregion
+
+        #endregion 遍歷
 
         #region 加入值
+
         private void Insert(T value, ref Node currentRoot)
         {
-
             if (currentRoot == null)
             {
                 currentRoot = new Node(value);
@@ -102,9 +107,11 @@ namespace Tree
             else
                 Insert(value, ref currentRoot.Right);
         }
-        #endregion
+
+        #endregion 加入值
 
         #region 移除指定值
+
         /// <summary>
         /// 移除指定值
         /// </summary>
@@ -113,7 +120,8 @@ namespace Tree
         {
             Remove(value, ref Root);
         }
-        void Remove(T value, ref Node currentRoot)
+
+        private void Remove(T value, ref Node currentRoot)
         {
             if (currentRoot == null) return;
             if (currentRoot.Value.CompareTo(value) < 0)
@@ -148,6 +156,7 @@ namespace Tree
                 currentRoot.Right = orgRight;
             }
         }
+
         /// <summary>
         /// BinaryTree使用的節點
         /// </summary>
@@ -158,11 +167,11 @@ namespace Tree
                 Value = value;
                 Left = Right = null;
             }
+
             public T Value { get; set; }
             public Node Left, Right;
-
         }
-        #endregion
 
+        #endregion 移除指定值
     }
 }

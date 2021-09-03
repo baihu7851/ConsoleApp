@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ParkingLot;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ParkingLot.Tests
 {
@@ -19,7 +13,7 @@ namespace ParkingLot.Tests
             pk.Entity("AAA");
             var car = pk.FindCar("ABC");
             var rmoney = pk.Exit(car, 6);
-            Assert.AreEqual(60, rmoney, "基礎費率算錯誤");   
+            Assert.AreEqual(60, rmoney, "基礎費率算錯誤");
             var car2 = pk.FindCar("AAA");
             var rmoney2 = pk.Exit(car2, 91);
             Assert.AreEqual(120, rmoney2, "額計算錯誤");

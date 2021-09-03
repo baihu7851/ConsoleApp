@@ -1,26 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace List_Array_Sort
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
-            const int COUNT = 50000;
+            const int count = 50000;
             List<int> lst = null;
             int[] arr = null;
-            SetData(ref lst, ref arr, COUNT);
+            SetData(ref lst, ref arr, count);
             Console.WriteLine("資料設定完成，開始排序");
-            DateTime start, end;
-            TimeSpan ts;
-            start = DateTime.Now;
+            var start = DateTime.Now;
             Sort(lst);
-            end = DateTime.Now;
-            ts = end - start;
+            var end = DateTime.Now;
+            var ts = end - start;
             Console.WriteLine($"ListSortTime:\t{ts.TotalMilliseconds}");
             start = DateTime.Now;
             Sort(arr);
@@ -28,26 +23,27 @@ namespace List_Array_Sort
             ts = end - start;
             Console.WriteLine($"ArraySortTime:\t{ts.TotalMilliseconds}");
             Console.ReadKey();
-
         }
-        private static void SetData(ref List<int> lst, ref int[] arr, int COUNT)
+
+        private static void SetData(ref List<int> lst, ref int[] arr, int count)
         {
             lst = new List<int>();
-            arr = new int[COUNT];
-            for (int i = 0; i < COUNT; i++)
+            arr = new int[count];
+            for (var i = 0; i < count; i++)
             {
                 Random rdm = new Random();
-                lst.Add(rdm.Next(COUNT));
-                arr[i] = rdm.Next(COUNT);
+                lst.Add(rdm.Next(count));
+                arr[i] = rdm.Next(count);
             }
         }
+
         private static void Sort(List<int> lst)
         {
             int count = lst.Count;
             int tmp;
-            for (int i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
             {
-                for (int j = i + 1; j < count; j++)
+                for (var j = i + 1; j < count; j++)
                 {
                     if (lst[j] < lst[i])
                     {
@@ -58,13 +54,14 @@ namespace List_Array_Sort
                 }
             }
         }
+
         private static void Sort(int[] arr)
         {
             int count = arr.Length;
             int tmp;
-            for (int i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
             {
-                for (int j = i + 1; j < count; j++)
+                for (var j = i + 1; j < count; j++)
                 {
                     if (arr[j] < arr[i])
                     {
